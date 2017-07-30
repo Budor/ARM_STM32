@@ -5,6 +5,7 @@
     <string name="toast_no_bt">This device does not support bluetooth.</string>
     <string name="toast_bt_not_enable">Can not enable bluetooth.</string>
     <string name="button_send">发送</string>
+    <string name="select_file">选择文件</string>
     <string-array name="sp_brs">
         <item>\\n</item>
         <item>None</item>
