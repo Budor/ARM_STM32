@@ -87,8 +87,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initView();
         startActivityForResult(new Intent(this, DevicesDiscoveryActivity.class), R_DISCOVERY_DEVICE);
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
@@ -176,17 +174,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
 
-        }
-        if(resultCode == Activity.RESULT_OK){
-            Uri uri = data.getData();
-            String[] proj = {"MediaStore.Images.Media,DATA"};
-            Cursor actualImageCursor = managedQuery(uri,proj,null,null,null);
-            int index = actualImageCursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-            actualImageCursor.moveToFirst();
-            String img_path = actualImageCursor.getString(index);
-            edit_file_path.setText(img_path);
-            File file = new File(img_path);
-            Toast.makeText(getApplicationContext(),file.toString(),Toast.LENGTH_LONG).show();
         }
     }
 
